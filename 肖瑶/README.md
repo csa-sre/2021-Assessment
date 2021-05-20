@@ -240,7 +240,7 @@ func main() {
 
 可以看到正确返回了代理请求
 
-![httpreq](.\images\httpreq.jpg)
+![httpreq](\images\httpreq.jpg)
 
 需要返回的内容：
 
@@ -392,5 +392,5 @@ func main() {
 
 至此，一个简单的基于云函数&golang的http/https代理完成了。
 
-![baidu](.\images\baidu.jpg)
+![baidu](\images\baidu.jpg)
 
