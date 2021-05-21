@@ -1,4 +1,4 @@
-用python实现简单的端口转发
+#用python实现简单的端口转发
 #端口转发源码
 	import socket
     import threading
@@ -114,5 +114,4 @@
     t_send = threading.Thread(target=send_msg,args=(c,addr))
     t_send.start()
     t_recv.start()
-运行实例
-先启动端口转发程序或者远程端口服务端，最后启动本地客户端
+#先启动端口转发程序或者远程端口服务端，最后启动本地客户端
