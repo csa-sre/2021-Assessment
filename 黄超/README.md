@@ -15,7 +15,7 @@ A服务器在内网，B服务器在公网，A、B服务器无法直接连接，�
 
 这样A，B服务器就间接联系在一起可以互相传递数据了
 
-#代码简介
+##代码简介
 ```python
 
 	def tcp_mapping_worker(conn_receiver, conn_sender):
