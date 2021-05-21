@@ -28,10 +28,10 @@
 	    return
 
     s = socket.socket()
-    #本机ip地址和端口
+  
     local_host = '192.168.79.128'
     local_port = 9922
-    #远端ip地址和端口
+    
     remote_host = '127.0.0.1'
     remote_port = 9921
     
