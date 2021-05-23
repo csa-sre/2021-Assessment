@@ -43,7 +43,7 @@ client =socket.socket()
 host = '192.168.79.128'
 port = 9922
 print('输入quit结束程序')
-while active1:
+while active1: #请求连接，每五秒发送一次，若一分钟后连接没有成功建立则终止程序
 	try:
 		client.connect((host,port))     #建立连接
 		active1 = False
