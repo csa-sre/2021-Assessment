@@ -1,5 +1,6 @@
 import socket
 import threading
+import time
 def tcp_mapping_worker(conn_receiver, conn_sender):
     while True:
         try:
@@ -41,8 +42,20 @@ s.listen(5)
 print('Starting mapping service on ' + local_host+ ':' + str(local_port) + ' ...')
 c,addr = s.accept()
 s2=socket.socket()
-
-s2.connect((remote_host, remote_port))
+active1 = True
+i=0
+while active1:
+	try:
+		s2.connect((remote_host,remote_port))     #建立连接
+		active1 = False
+	except Exception as error:
+		time.sleep(5)
+		i=i+1
+		if i==12:
+			print('连接超时')
+			active1=False
+		else:
+			continue
 
 threading.Thread(target=tcp_mapping_worker,args=(c,s2)).start() 
 threading.Thread(target=tcp_mapping_worker,args=(s2,c)).start()
