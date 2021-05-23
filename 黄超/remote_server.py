@@ -38,7 +38,7 @@ def send_msg(socket,addr):
 			
 
 active = True
-server = socket.socket()    #建立一个服务端
+server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)    #建立一个服务端
 host = '127.0.0.1'   #获取主机ip地址
 port = 9921    #设置端口
 server.bind((host,port))    #绑定端口
