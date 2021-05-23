@@ -39,7 +39,7 @@ def send_msg(client):
 active = True
 active1 = True
 i=0       
-client =socket.socket()
+client =socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 host = '192.168.79.128'
 port = 9922
 print('输入quit结束程序')
