@@ -26,7 +26,7 @@ def tcp_mapping_worker(conn_receiver, conn_sender):
     
     return
 
-s = socket.socket()
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 #本机ip地址和端口
 local_host = '192.168.79.128'
 local_port = 9922
@@ -41,7 +41,7 @@ s.listen(5)
 
 print('Starting mapping service on ' + local_host+ ':' + str(local_port) + ' ...')
 c,addr = s.accept()
-s2=socket.socket()
+s2=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 active1 = True
 i=0
 while active1:  #请求连接，每五秒发送一次请求，若超过一分钟则终止程序
