@@ -25,7 +25,7 @@ def tcp_mapping_worker(conn_receiver, conn_sender):
     
     return
 
-s = socket.socket()
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 #本机ip地址和端口
 local_host = '192.168.79.128'
 local_port = 9922
@@ -39,7 +39,7 @@ print('远端ip地址和端口'+remote_host+':'+str(remote_port))
 s.listen(5)
 
 print('Starting mapping service on ' + local_host+ ':' + str(local_port) + ' ...')
-c,addr = s.accept()
+c,addr = s.accept(socket.AF_INET,socket.SOCK_STREAM)
 s2=socket.socket()
 
 s2.connect((remote_host, remote_port))
