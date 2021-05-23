@@ -1,10 +1,7 @@
 #用python实现简单的端口转发
 ##简介
-
 利用python的socket实现端口转发
-
 ##使用场景
-
 A服务器在内网，B服务器在公网，A、B服务器无法直接连接，但是C服务器既可以访问A服务器也可以访问B服务器，但A想向B发送数据，那么可以这样：
 
 1.在C服务器上运行forwarding程序，同时监听A服务器和B服务器的端口这样两个端口就可以互相传递数据了
@@ -17,7 +14,6 @@ A服务器在内网，B服务器在公网，A、B服务器无法直接连接，�
 
 ##代码简介
 ```python
-
 	def tcp_mapping_worker(conn_receiver, conn_sender):
     	while True:
     		try:
@@ -46,7 +42,6 @@ A服务器在内网，B服务器在公网，A、B服务器无法直接连接，�
 tcp_mapping_worker这个函数实现从一个服务接收数据并发送给另一个服务器属于forwarding代码的的核心部分
 
  ```python
-    
     threading.Thread(target=tcp_mapping_worker,args=(c,s2)).start() 
     threading.Thread(target=tcp_mapping_worker,args=(s2,c)).start()
 ```
@@ -55,7 +50,6 @@ tcp_mapping_worker这个函数实现从一个服务接收数据并发送给另�
 remote_server和local_client两个程序跟之前写的tcp多线程聊天器差不多
 需要注意的是如果A服务器输入 quit 连接就会中断
 ```python
-
     def recv_msg(client):
     	while True:
     		data = client.recv(1024)	
