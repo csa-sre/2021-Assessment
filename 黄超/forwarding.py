@@ -44,7 +44,7 @@ c,addr = s.accept()
 s2=socket.socket()
 active1 = True
 i=0
-while active1:
+while active1:  #请求连接，每五秒发送一次请求，若超过一分钟则终止程序
 	try:
 		s2.connect((remote_host,remote_port))     #建立连接
 		active1 = False
