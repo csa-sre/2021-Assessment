@@ -15,10 +15,11 @@ def main():
     sockscr = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sockscr.bind(('', port))
     sockscr.listen(200)
+    only =input("请输入授权的的用户名")
     while True:
         try:
             conn, addr = sockscr.accept()
-            if input("请输入授权的的用户名") != onlyYou:
+            if only != onlyYou:
                 conn.close()
                 continue
             t = threading.Thread(target=replymessage, args=(conn,))
