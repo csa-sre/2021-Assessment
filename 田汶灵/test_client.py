@@ -21,7 +21,19 @@ def to(c):
             break
 
 
+def rec(c):
+    while True:
+        data1 = (c.recv(2048)).decode('utf-8')
+        print('收到来自服务端的消息:%s' % (data1))
+        if len(data1) == 0:
+            print('连接断开')
+            c.close()
+            break
+
+
 to_a = threading.Thread(target=to, args=(c,))
+rec_a = threading.Thread(target=rec, args=(c,))
 to_a.start()
+rec_a.start()
 
 

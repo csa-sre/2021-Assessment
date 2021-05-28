@@ -2,10 +2,10 @@ import socket
 import threading
 
 
+c_host = "192.168.43.2"
+c_port = 9088
 s_host = "127.0.0.1"
 s_port = 9077
-c_host = "127.0.0.1"
-c_port = 9088
 
 
 # 将来自s套接字的数据转发到c套接字
